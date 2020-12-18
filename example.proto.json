@@ -1,0 +1,10 @@
+{
+  "package": "test_package",
+  "filename": "example.proto",
+  "dependencies": [
+    "google/protobuf/empty.proto"
+  ],
+  "options": {
+    "java_package": "com.example.foo"
+  }
+}

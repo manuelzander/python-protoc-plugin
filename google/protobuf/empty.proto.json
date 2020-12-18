@@ -1,0 +1,14 @@
+{
+  "package": "google.protobuf",
+  "filename": "google/protobuf/empty.proto",
+  "dependencies": [],
+  "options": {
+    "java_package": "com.google.protobuf",
+    "java_outer_classname": "EmptyProto",
+    "java_multiple_files": "true",
+    "go_package": "google.golang.org/protobuf/types/known/emptypb",
+    "cc_enable_arenas": "true",
+    "objc_class_prefix": "GPB",
+    "csharp_namespace": "Google.Protobuf.WellKnownTypes"
+  }
+}

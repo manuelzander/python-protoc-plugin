@@ -49,15 +49,11 @@ On Linux you can use:
 
 Make sure the virtual environment is activated.
 
-Run the code generation: 
+Simply run `make`, or the below to start the code generation:
 
     protoc example.proto --plugin=protoc-gen-custom-plugin=./plugin.py --custom-plugin_out=.
 
-Note that `custom-plugin` is both the last portion of the plugin name and the first part of the out argument.
-
-Or simply use the Makefile:
-
-    make
+Note that `custom-plugin` is both the last portion of the plugin name and the first part of the out argument.    
 
 ## Authors
 
