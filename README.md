@@ -6,6 +6,8 @@ A basic skeleton for a custom Python plugin for protoc, Google's official compil
 
 >A plugin is just a program which reads a `CodeGeneratorRequest` protocol buffer from standard input and then writes a `CodeGeneratorResponse` protocol buffer to standard output. These message types are defined in [plugin.proto](https://developers.google.com/protocol-buffers/docs/reference/cpp/google.protobuf.compiler.plugin.pb). We recommend that all third-party code generators be written as plugins, as this allows all generators to provide a consistent interface and share a single parser implementation.
 
+*I've also written a blog post about this example, see [here](https://manzan.dev/python-protoc-plugin).*
+
 ## Prerequisites
 
 ![python](https://img.shields.io/badge/python-3.9-blue?style=for-the-badge&logo=python&logoColor=white)
