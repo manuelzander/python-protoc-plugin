@@ -21,29 +21,27 @@ def process_file(
 
     # Create dict of options
     options = str(proto_file.options).strip().replace("\n", ", ").replace('"', "")
-    options = dict(item.split(": ") for item in options.split(", ") if options)  # type: ignore
+    options_dict = dict(item.split(": ") for item in options.split(", ") if options)
 
     # Create list of dependencies
-    dependencies = list(proto_file.dependency)
+    dependencies_list = list(proto_file.dependency)
 
     data = {
         "package": f"{proto_file.package}",
         "filename": f"{proto_file.name}",
-        "dependencies": dependencies,
-        "options": options,
+        "dependencies": dependencies_list,
+        "options": options_dict,
     }
 
-    f = response.file.add()
-    f.name = proto_file.name + ".json"
-    logger.info(f"Writing file: {f.name}")
-    f.content = json.dumps(data, indent=2) + "\r\n"
+    file = response.file.add()
+    file.name = proto_file.name + ".json"
+    logger.info(f"Creating new file: {file.name}")
+    file.content = json.dumps(data, indent=2) + "\r\n"
 
 
 def process(
     request: plugin.CodeGeneratorRequest, response: plugin.CodeGeneratorResponse
 ) -> None:
-
-    # Loop over .proto files
     for proto_file in request.proto_file:
         process_file(proto_file, response)
 
